@@ -1,0 +1,41 @@
+
+/* ROOT */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body,
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.section-text{
+    @include display-type(flex,row,wrap,flex-end,none);
+    padding-top: 90px;
+    font-size: 26px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    margin-right: 90px;
+    color: #000;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: rgb(204, 202, 200);
+}
+  
+::-webkit-scrollbar-thumb {
+    background: rgb(12, 12, 12);
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- LINKS  -->
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  </head>
+  
+  <body>
+    <header>
+      <!-- HEADER QUE INCLUYE EL LOGO (CREADO CON UN TITULO Y MODIFICANDOLO MANUALMENTE CON CSS),Y  LA BARRA NAVEGADORA -->
+      <a class= "header-title-link" href="#"><h1 class=>FENDI</h1></a>
+      <nav class="nav-header">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="index.html">Woman</a>
+            <div class="nav-woman">
+              <ul>
+                <li><a href="index.html">Basics</a></li>
+                <li><a href="#">For Sale</a></li>
+                <li><a href="womanSubsectionAll.html">View All</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="http://127.0.0.1:5500/index.html#about-section">About us</a></li>
+      		<li><a href="http://127.0.0.1:5500/index.html#stores-section">Stores</a>
+            <div class="nav-stores">
+              <ul>
+                <li><a href="http://127.0.0.1:5500/index.html#first-store">Dubai</a></li>
+                <li><a href="http://127.0.0.1:5500/index.html#second-store">V.Mall</a></li>
+                <li><a href="http://127.0.0.1:5500/index.html#third-store">Tryano</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="http://127.0.0.1:5500/index.html#contact-section">Contact us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- SECCION QUE INCLUYE 3 FOTOS POSICIONADAS CON GRID SYSTEM Y UN ACARROUSEL-->
+
+    <section>
+      <div id="carouselExampleCaptions" class=" carousel slide justify-content-center" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner ">
+          <div class="carousel-item active carrousel">
+            <img src="multimedia/carrousel1.jpg" class="d-block w-100" alt="Jim jones for the new collection of Fendi">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>The first Fendi Paulette</h5>
+              <p>Ready to wear collection by Jim Jones</p>
+            </div>
+          </div>
+          <div class="carousel-item carrousel">
+            <img src="multimedia/carrousel2.jpg" class="d-block w-100" alt="Peakibu for the new collection of Fendi">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>The first Fendi Peakibu</h5>
+              <p>Ready to wear collection by Jim Jones</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <img class="sale-img" src="multimedia/fotoforsale2.jpg" alt="A Model for the  Jim Jones collection" />
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <img class="sale-img " src="multimedia/fotoforsale3.jpg" alt="A Model for the  Jim Jones collection" />
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+    <!-- SECCION FOOTER QUE INCLUYE UN TEXTO Y REDES SOCIALES-->
+    <footer>
+      <ul class="footer-icons">
+        <a href="https://www.instagram.com/fendi/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/fendi?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com/c/Fendi" target="_blank"><i class="fab fa-youtube"></i></a>
+      </ul>      
+      
+      <ul class="info-footer">
+        <a class= "footer-text-info" href=" https://www.vogue.com/fashion-shows/designer/fendi" target="_blank"><i></i>More News</a>
+        <a class= "footer-text-info" href="#contact-section">Contact Us</a>
+      </ul>
+
+      <p class="footer-text">
+        © FENDI - TODOS LOS DERECHOS RESERVADOS - P. IVA 00900421009 LICENCIA
+        SIAE N. 3566/I/1417 - V. 9.28.11.AS1
+      </p>
+    </footer>
+
+    
+    <!--  SCRIPTS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f0b4d212f8.js" crossorigin="anonymous"></script>
+  </body>
+</html>

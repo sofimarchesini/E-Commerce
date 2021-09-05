@@ -1,0 +1,45 @@
+
+/* FOOTER SECTION */
+
+@import '../base/variables';
+
+footer{
+    
+    background-color: rgb(27, 27, 27);
+    height: 20vh;
+    padding-top: 20px;
+
+    @media only screen and (max-width: 659px){
+        height:30vh;
+    }
+    
+    .footer-text {
+        @include display-type(flex,row,wrap,center,center);
+        font-family: $--main-f-family;
+        color:  map-get($colores, color-fondo);
+        font-size: 13px;
+        margin-left: 10px;
+    }
+
+    .info-footer{
+        @include display-type(flex,row,wrap,center,center);
+        .footer-text-info{
+            color: rgb(224, 224, 224);
+            text-decoration: none;
+            margin: 4px 9px;
+        }
+    }   
+
+    .footer-icons {
+        @include display-type(flex,row,wrap,center,center);
+        margin-right: 30px;
+        line-height: 0.7;
+        text-decoration: none;
+        font-size: 20px;
+        i {
+            margin: 4px 9px;
+            color: map-get($colores, color-fondo);
+        }
+    }
+}
+

@@ -1,0 +1,29 @@
+/* MIXINS FUNCTIONS*/
+
+
+@mixin display-type($display, $direction, $wrap,$justify,$align-items) {
+    display: $display;
+
+    @if $display == 'flex' {
+        flex-direction: $direction;
+        flex-wrap: $wrap;
+        align-items: $align-items;
+        justify-content: $justify;
+    } 
+    @else if  $display == 'grid' {
+        justify-content: $justify;
+    }
+}
+
+
+@mixin box-modeling($padding,$margin){
+    padding: $padding;
+    margin: $margin;
+}
+
+%link-woman {
+    text-decoration: none;
+    color: black;
+    width: 20%;
+    font-size: 20px;
+}

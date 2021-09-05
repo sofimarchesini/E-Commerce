@@ -1,0 +1,119 @@
+
+/* HEADER SECTION */
+
+header {
+    @include display-type(flex,row,wrap,space-between,center);
+    height: 14vh;
+    background-color: rgb(27, 27, 27);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    
+    .header-title-link {
+        @include display-type(flex,row,wrap,center,center);
+        text-decoration: none;
+        width: 100%;
+        
+        h1 {
+            margin-top: 7px;
+            font-size: 36px;
+            color: rgb(224, 219, 219);
+        }
+    }
+    nav{
+        @include display-type(flex,row,wrap,center,center);
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-size: 15px;
+        width: 100%;
+
+        @media only screen and (max-width: 659px){
+          background-color: rgb(27, 27, 27);
+        }
+        ul{
+            @include display-type(flex,row,wrap,center,center);
+            width: 500px;
+            list-style-type: none;
+            position: relative;
+
+            @media only screen and (max-width: 500px){
+              @include display-type(flex,column,wrap,center,center);
+              background-color:rgb(27, 27, 27);
+              width: 100%;
+              padding: 0!important;
+            }
+
+            li{
+                flex: auto;
+                margin: 7px 3px;
+
+                &:hover .nav-stores, &:hover .nav-woman{
+                    display: flex;
+                    margin-top: 8px;
+
+                    @media only screen and (max-width: 659px){
+                      z-index: 9999;
+                      flex-direction: column;
+                      margin-top: 5px;
+                    }
+                }
+            }
+        }
+
+        a{
+            text-decoration: none;
+            color: rgb(226, 222, 222);
+            padding: 10px 10px;
+            position: relative;
+
+            &:hover{
+                color: rgb(175, 173, 173);
+                &:before,&:after{
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+            &::after{
+                position: absolute;
+                left: 0px;
+                width: 100%;
+                height: 1px;
+                background: rgb(192, 188, 188);
+                content: "";
+                transition: all 0.3s;
+                opacity: 0;
+                bottom: 0px;
+                transform: translateY(-10px);
+            }
+            &::before{
+                top: 0px;
+                transform: translateY(10px);
+            }
+            &:active{
+                color: ivory;
+            }
+        }
+    
+        .nav-stores,.nav-woman{
+            position: absolute;
+            width: 100%;
+            display: none;
+            background-color:rgb(27, 27, 27);
+            left: 0;
+            
+            ul{
+                @include display-type(flex,column,no-wrap,center,center);
+                height: 18vh;
+
+                @media only screen and (max-width: 659px){
+                    border-top:2px solid rgb(112, 110, 110);
+                }
+            
+                li{
+                    display: block;
+                }
+            }
+        }
+    }      
+}
+
+
