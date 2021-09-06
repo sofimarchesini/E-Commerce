@@ -193,7 +193,7 @@ header .header-title-link {
   width: 100%;
 }
 header .header-title-link h1 {
-  margin-top: 7px;
+  margin-top: 6px;
   font-size: 36px;
   color: #e0dbdb;
 }
@@ -311,12 +311,13 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
   height: 100%;
   background-position: var(--main-position);
 }
-.home-section .home-img {
-  margin-top: 170px;
+.home-section .home-vid {
+  margin-top: 90px;
+  opacity: 0.9;
 }
 @media only screen and (max-width: 500px) {
-  .home-section .home-img {
-    margin-top: 300px;
+  .home-section .home-vid {
+    margin-top: 250px;
   }
 }
 .home-section .link-for-sale {
@@ -423,6 +424,11 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
 
 .carrousel {
   margin-top: 120px;
+}
+@media only screen and (max-width: 500px) {
+  .carrousel {
+    margin-top: 300px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

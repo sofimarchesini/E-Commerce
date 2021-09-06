@@ -6,11 +6,12 @@
     height: 100%;
     background-position: var(--main-position);
 
-    .home-img{
-      margin-top: 170px;
+    .home-vid{
+      margin-top: 90px;
+      opacity: 0.9;
 
       @media only screen and (max-width: 500px){
-        margin-top: 300px
+        margin-top: 250px
       }
     }
 
