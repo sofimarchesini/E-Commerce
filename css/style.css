@@ -123,51 +123,99 @@ html {
 /*  VARIABLES */
 footer {
   background-color: #1b1b1b;
-  height: 20vh;
+  width: 100%;
+  height: 100%;
   padding-top: 20px;
 }
-@media only screen and (max-width: 659px) {
-  footer {
-    height: 30vh;
-  }
+footer li:hover {
+  text-decoration: underline;
 }
-footer .footer-text {
+footer .brand-description {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  font-family: "Gowun Batang", serif;
-  color: white;
-  font-size: 13px;
-  margin-left: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
-footer .info-footer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-footer .info-footer .footer-text-info {
-  color: #e0e0e0;
+footer .brand-description .footer-title-link {
   text-decoration: none;
-  margin: 4px 9px;
+  width: 100%;
+  cursor: auto;
 }
-footer .footer-icons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-right: 30px;
+footer .brand-description .footer-title-link h1 {
+  margin-top: 6px;
+  font-size: 40px;
+  color: #e0dbdb;
+}
+footer .brand-description .text-description {
+  color: white;
+  font-size: 12px;
+  padding-right: 30px;
+}
+footer .brand-description .footer-icons {
+  padding-left: 0;
+  margin-top: 20px;
   line-height: 0.7;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
 }
-footer .footer-icons i {
+footer .brand-description .footer-icons i {
   margin: 4px 9px;
   color: white;
+}
+footer .brand-info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: none;
+}
+footer .brand-info nav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+}
+footer .brand-info nav .info-footer {
+  list-style-type: none;
+}
+footer .brand-info nav .info-footer .title-nav {
+  color: #e0e0e0;
+  margin-top: 6px;
+  padding: 2px 2px;
+}
+footer .brand-info nav .info-footer li {
+  padding: 2px 2px;
+}
+footer .brand-info nav .info-footer li .footer-text-info {
+  color: #e0e0e0;
+  text-decoration: none;
+}
+footer .subfooter {
+  border-top: 2px solid white;
+}
+footer .subfooter .footer-text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: "Gowun Batang", serif;
+  color: white;
+  font-size: 11px;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+footer .subfooter .country-text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 /* HEADER SECTION */
@@ -314,7 +362,7 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
   background-color: #1b1b1b;
 }
 .home-section .home-vid {
-  margin-top: 90px;
+  margin-top: 100px;
   opacity: 0.8;
 }
 @media only screen and (max-width: 500px) {
@@ -419,7 +467,7 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
 }
 
 .sale-img {
-  margin-top: 120px;
+  margin-top: 20px;
   margin-bottom: 20px;
   width: 100%;
 }
