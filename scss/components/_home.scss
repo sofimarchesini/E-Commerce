@@ -5,7 +5,7 @@
     width: 100%;
     height: 100%;
     background-position: var(--main-position);
-    background-color:rgb(27, 27, 27);
+    background-color:map-get($colores, color-base) ;
 
     .home-vid{
       margin-top: 100px;
@@ -21,6 +21,7 @@
       color: whitesmoke;
       background-color:rgb(26, 26, 26);
       border: 2px solid rgb(85, 84, 84);
+      padding: 15px 15px;
       
       @media screen and (max-width: 600px) {
           width:50%;

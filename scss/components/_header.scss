@@ -4,7 +4,7 @@
 header {
     @include display-type(flex,row,wrap,space-between,center);
     height: 14vh;
-    background-color: rgb(27, 27, 27);
+    background-color: map-get($colores, color-base);
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -23,11 +23,11 @@ header {
     nav{
         @include display-type(flex,row,wrap,center,center);
         font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-        font-size: 15px;
+        font-size: 17px;
         width: 100%;
 
         @media only screen and (max-width: 659px){
-          background-color: rgb(27, 27, 27);
+          background-color: map-get($colores, color-base);
         }
         ul{
             @include display-type(flex,row,wrap,center,center);

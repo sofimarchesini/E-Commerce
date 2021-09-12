@@ -4,8 +4,8 @@
 @import '../base/variables';
 
 footer{
-    
-    background-color: rgb(27, 27, 27);
+    padding: 60px 60px;
+    background-color: map-get($colores, color-base);
     width: 100%;
     height: 100%;
     padding-top: 20px;
@@ -50,24 +50,27 @@ footer{
     }
 
     .brand-info{
-        @include display-type(flex,column,nowrap,none,flex-end);
-
         nav{
-            @include display-type(flex,column,nowrap,center,center);
+            @include display-type(flex,column,nowrap,flex-end,flex-end);
             text-decoration: none;
             font-size: 14px;
 
+            @media only screen and (max-width: 980px) {
+                @include display-type(flex,column,nowrap,flex-start,flex-start);
+                padding: 0;
+            }
             .info-footer{
                 list-style-type: none;
+                padding: 0;
 
                 .title-nav{
                     color: rgb(224, 224, 224);
                     margin-top: 6px;
-                    padding: 2px 2px;
                 }
 
                 li{
                     padding: 2px 2px;
+
                     .footer-text-info{
                         color: rgb(224, 224, 224);
                         text-decoration: none;
@@ -75,9 +78,8 @@ footer{
                 }
             }   
         }
-    
-
     }
+
     .subfooter{
         border-top: 2px solid map-get($colores, color-fondo);
 
@@ -88,7 +90,6 @@ footer{
             font-size: 11px;
             margin-top: 30px;
             padding-top:10px;
-            padding-bottom:30px;
         }
 
         .country-text{
