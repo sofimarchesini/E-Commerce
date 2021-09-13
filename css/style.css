@@ -440,7 +440,12 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
   margin: 50px 0;
   padding: 0 70px;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 945px) {
+  .woman-section .grid-container-woman {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 800px) {
   .woman-section .grid-container-woman {
     display: grid;
     justify-content: space-between;
