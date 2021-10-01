@@ -4,7 +4,7 @@
 header {
     @include display-type(flex,row,wrap,space-between,center);
     height: 13vh;
-    background-color: map-get($colores, color-base);
+    background-color:white;
     position: fixed;
     width: 100%;
     z-index: 999;
