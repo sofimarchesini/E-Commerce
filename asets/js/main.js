@@ -28,14 +28,12 @@ if (LScart) {
 };
 
 
-function anadirProducto(){
+function añadirProducto(){
     let texto = document.createElement("p");
     texto.innerHTML = "Agregado";
     console.log(texto);
-    let mensaje = document.getElementById("texto-prueba");
-    mensaje.appendChild(texto);
-    cart.añadirProducto();
-    cart.saveOnStorage();
+    //cart.añadirProducto();
+    //cart.saveOnStorage();
 
 }
 
