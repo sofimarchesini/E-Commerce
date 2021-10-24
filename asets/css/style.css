@@ -232,7 +232,7 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  height: 13vh;
+  height: 12vh;
   background-color: #1b1b1b;
   position: fixed;
   width: 100%;
@@ -245,13 +245,40 @@ header .header-title-link {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  width: 100%;
   cursor: auto;
 }
 header .header-title-link h1 {
   margin-top: 6px;
   font-size: 36px;
   color: #e0dbdb;
+}
+header .icon-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+}
+header .card-link {
+  flex: auto;
+}
+header .card-link:active .card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+header .card {
+  position: absolute;
+  width: 20%;
+  right: 0%;
+  display: none;
+  background-color: #f8f2f2;
+  height: 80vh;
 }
 header nav {
   display: flex;
@@ -475,6 +502,16 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
 .woman-section .grid-container-woman .woman-img:hover {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
+}
+.woman-section .grid-container-woman .button {
+  background-color: white;
+}
+.woman-section .grid-container-woman .button .carrito-title {
+  font-size: 15px;
+}
+.woman-section .grid-container-woman #texto-prueba {
+  font-size: 500px;
+  color: black;
 }
 
 .sale-img {

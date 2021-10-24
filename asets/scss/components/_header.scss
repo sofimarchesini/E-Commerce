@@ -3,8 +3,8 @@
 
 header {
     @include display-type(flex,row,wrap,space-between,center);
-    height: 13vh;
-    background-color:white;
+    height: 12vh;
+    background-color:map-get($colores, color-base);
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -12,7 +12,6 @@ header {
     .header-title-link {
         @include display-type(flex,row,wrap,center,center);
         text-decoration: none;
-        width: 100%;
         cursor: auto;        
         h1 {
             margin-top: 6px;
@@ -20,6 +19,31 @@ header {
             color: rgb(224, 219, 219);
         }
     }
+
+    .icon-header{
+        @include display-type(flex,row,wrap,flex-end,flex-end);
+        color: white;
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .card-link{
+        flex: auto;
+
+        &:active .card{
+            @include display-type(flex,row,wrap,flex-end,flex-end);
+        }
+    }
+
+    .card{
+        position: absolute;
+        width: 20%;
+        right: 0%;
+        display: none;
+        background-color:rgb(248, 242, 242);
+        height: 80vh;
+    }
+
     nav{
         @include display-type(flex,row,wrap,center,center);
         font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;

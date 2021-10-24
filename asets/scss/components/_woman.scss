@@ -69,8 +69,23 @@
             &:hover{
                 -webkit-transform: scale(1.2);
                 transform: scale(1.2);
+
             }
-        }  
+        }
+        
+        .button{
+
+          background-color: white;
+
+          .carrito-title{
+            font-size: 15px;
+
+          }
+        }
+        #texto-prueba{
+          font-size: 500px;
+          color: black;
+        }
     }
 }
 
