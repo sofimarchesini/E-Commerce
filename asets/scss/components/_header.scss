@@ -7,7 +7,7 @@ header {
     background-color:map-get($colores, color-base);
     position: fixed;
     width: 100%;
-    z-index: 999;
+    z-index: 998;
 
     .header-title-link {
         @include display-type(flex,row,wrap,center,center);
@@ -24,24 +24,17 @@ header {
         @include display-type(flex,row,wrap,flex-end,flex-end);
         color: white;
         padding: 20px;
-        font-size: 20px;
+        font-size: 26px;
     }
 
-    .card-link{
-        flex: auto;
-
-        &:active .card{
-            @include display-type(flex,row,wrap,flex-end,flex-end);
-        }
-    }
-
-    .card{
+    .cart-items{
         position: absolute;
-        width: 20%;
-        right: 0%;
-        display: none;
-        background-color:rgb(248, 242, 242);
-        height: 80vh;
+        border-radius: 40%;
+        padding: 0 5px;
+        top: 10px;
+        right: 22px;
+        background: rgb(219, 207, 207);
+        color: rgb(83, 61, 61);
     }
 
     nav{

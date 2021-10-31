@@ -236,7 +236,7 @@ header {
   background-color: #1b1b1b;
   position: fixed;
   width: 100%;
-  z-index: 999;
+  z-index: 998;
 }
 header .header-title-link {
   display: flex;
@@ -260,25 +260,16 @@ header .icon-header {
   justify-content: flex-end;
   color: white;
   padding: 20px;
-  font-size: 20px;
+  font-size: 26px;
 }
-header .card-link {
-  flex: auto;
-}
-header .card-link:active .card {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-header .card {
+header .cart-items {
   position: absolute;
-  width: 20%;
-  right: 0%;
-  display: none;
-  background-color: #f8f2f2;
-  height: 80vh;
+  border-radius: 40%;
+  padding: 0 5px;
+  top: 10px;
+  right: 22px;
+  background: #dbcfcf;
+  color: #533d3d;
 }
 header nav {
   display: flex;
@@ -537,6 +528,49 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
 @media only screen and (max-width: 490px) {
   .first-img {
     margin-top: 50px;
+  }
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  transition: all 0.3s linear;
+  z-index: 999;
+  visibility: hidden;
+}
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 98vh;
+  background: #fff;
+  z-index: 1000;
+  padding: 1.5rem;
+  transition: all 0.3s linear;
+  transform: translateX(100%);
+}
+
+.showCart {
+  transform: translateX(0);
+}
+
+.transparentBcg {
+  visibility: visible;
+}
+
+.close-cart {
+  color: black;
+  margin-top: 300px;
+}
+
+@media screen and (min-width: 768px) {
+  .cart {
+    width: 30vw;
+    min-width: 450px;
   }
 }
 

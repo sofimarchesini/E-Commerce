@@ -1,0 +1,41 @@
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    transition: all 0.3s linear;
+    z-index: 999;
+    visibility: hidden;
+
+}
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 98vh;
+    background: #fff;
+    z-index: 1000;
+    padding: 1.5rem;
+    transition: all 0.3s linear;
+    transform: translateX(100%);
+}
+.showCart {
+    transform: translateX(0);
+}
+.transparentBcg {
+visibility: visible;
+}
+
+.close-cart{
+    color: black;
+    margin-top: 300px;
+}
+
+@media screen and (min-width: 768px) {
+    .cart {
+        width: 30vw;
+        min-width: 450px;
+    }
+}
