@@ -1,9 +1,14 @@
-const cartDOM = document.querySelector(".cart");
 
+const cartDOM = document.querySelector(".cart");
 const cartbutton = document.querySelector(".cart-button");
 const cartoverlay = document.querySelector(".cart-overlay") ;
 const closecart = document.querySelector(".close-cart");
-// funcion para añadir productos nuevos al stock
+let button = document.querySelectorAll(".button");
+const cartContent = document.querySelector(".cart-content");
+const cartTotal = document.querySelector(".cart-total");
+
+let carrito = [];
+
 
 //const LScart = localStorage.getItem("cart");
 
@@ -30,9 +35,6 @@ function continuarPago(){
 
 //-----------------------------------
 
-let button = document.querySelectorAll(".button");
-let carrito = [];
-
 for ( let boton of button ){
     boton.addEventListener("click",añadirProducto);
 }
@@ -40,27 +42,15 @@ for ( let boton of button ){
 function añadirProducto(e){
     let hijo = e.target;
     let padre = hijo.parentNode.parentNode;
-
     let name = padre.querySelector(".name").textContent;
     let price = padre.querySelector(".price").textContent;
-    const producto = new Producto(name,price,2);
+    let image = padre.querySelector("img").src;
+    const producto = new Producto(name,price,2,image);
     carrito.push(producto);
     actualizarCarrito(producto);
+    actualizarTotal(carrito);
 }
-/** 
-function actualizarCarrito(producto){
 
-    let fila = document.createElement("tr"); 
-
-    fila.innerHTML = `<td>${producto.name}</td>
-                        <td>${producto.price}</td>
-                        <td><button class="btn btn-danger">Eliminar</button></td>
-                    `
-    console.log(fila);
-    let tbody = document.getElementById("tbody");
-    tbody.appendChild( fila );
-    
-}*/
 
 function showCart(){
     cartoverlay.classList.add("transparentBcg");
@@ -72,7 +62,43 @@ function hideCart(){
     cartDOM.classList.remove("showCart");
 }
 
-
-
 cartbutton.addEventListener("click", showCart);
 closecart.addEventListener("click", hideCart);
+
+function actualizarCarrito(item) {
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+    div.innerHTML = `<!-- cart item -->
+            <!-- item image -->
+            <img src=${item.image} alt="product" />
+            <!-- item info -->
+            <div>
+              <h4>${item.name}</h4>
+              <h5>${item.price}</h5>
+              <span class="remove-item" data-id=${item.id}>
+                <i class="far fa-trash-alt"></i>
+              </span>
+            </div>
+            <!-- item functionality -->
+            <div>
+                <i class="fas fa-chevron-up" data-id=${item.id}></i>
+              <p class="item-amount">${item.amount}
+                
+              </p>
+                <i class="fas fa-chevron-down" data-id=${item.id}></i>
+            </div>
+          <!-- cart item -->
+    `;
+    cartContent.appendChild(div);
+}
+
+function actualizarTotal(cart){
+    let tempTotal=0;
+    console.log(cart);
+    cart.map(item => {
+         tempTotal += parseInt(item.price);
+    });
+    
+    console.log(tempTotal);
+    cartTotal.innerText = tempTotal;
+}

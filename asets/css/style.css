@@ -535,7 +535,7 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
   position: fixed;
   top: 0;
   right: 0;
-  width: 100%;
+  width: 90%;
   transition: all 0.3s linear;
   z-index: 999;
   visibility: hidden;
@@ -546,12 +546,13 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
   top: 0;
   right: 0;
   width: 100%;
-  height: 98vh;
+  height: 100%;
   background: #fff;
   z-index: 1000;
   padding: 1.5rem;
   transition: all 0.3s linear;
   transform: translateX(100%);
+  overflow: scroll;
 }
 
 .showCart {
@@ -566,12 +567,42 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
   color: black;
   margin-top: 300px;
 }
+.close-cart .icon-close {
+  font-size: 27px;
+}
 
 @media screen and (min-width: 768px) {
   .cart {
     width: 30vw;
     min-width: 450px;
   }
+}
+.cart-content img {
+  margin-top: 10px;
+  width: 30%;
+}
+
+.cart-footer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.clear-cart {
+  border-radius: 10px;
+  border-color: whitesmoke;
+  color: black;
+  background: #f1f1ef;
+  padding: 8px;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  margin-top: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
