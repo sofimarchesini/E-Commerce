@@ -30,6 +30,8 @@ function saveOnStorage() {
 //-----------------------------------
 
 
+// FUNCIONES DE CARRITO
+
 function addCart(producto){
     const prod = cart.find(prod => prod.id === producto.id);
     if (prod) {
@@ -79,6 +81,23 @@ function addAndShowCart(item) {
     if(cart.length==1) {showCart()};
 }
 
+function freshTotal(cart){
+    let tempTotal=0;
+    cart.map(item => {
+         tempTotal += parseInt(item.price);
+    });
+    cartTotal.innerText = tempTotal;
+}
+
+function clearTotal(){
+    cartTotal.innerText = 0;
+}
+
+
+
+
+// FUNCIONES PARA INICIALIZAR PRODUCTOS 
+
 function initializeProducts(){
     productos.forEach(prod => generateCard(prod));
 }
@@ -98,6 +117,8 @@ function generateCard(prod){
 
     products.appendChild(div);
 }
+
+// BOTONES
 
 function addButton(){
     for ( let prod of productos){
@@ -130,25 +151,15 @@ closecart.addEventListener("click", hideCart);
 clearCartBtn.addEventListener("click",clearCart);
 
 
-
-function freshTotal(cart){
-    let tempTotal=0;
-    cart.map(item => {
-         tempTotal += parseInt(item.price);
-    });
-    cartTotal.innerText = tempTotal;
-}
-
-function clearTotal(){
-    cartTotal.innerText = 0;
-}
-
+//FUNCIONES AUXILIARES
 
 function setearProducto(name,price,datosProducto){
     let id = Object.keys(datosProducto).length+1;
     let producto = new Producto(name,price,id);
     datosProducto[id] = producto;
 }
+
+
 
 function main(){
     initializeProducts();
