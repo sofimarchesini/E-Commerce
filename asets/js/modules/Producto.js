@@ -2,11 +2,12 @@
 // Clases
 
 class Producto{
-    constructor(name, price,id,image){
+    constructor(id,name, price,image,description){
+        this.id = id;
         this.name = name;
         this.price = price;
-        this.id = id;
         this.image = image;
+        this.description = this.description;
     }
 }
 

@@ -582,11 +582,6 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
   width: 30%;
 }
 
-.cart-footer {
-  margin-top: 50px;
-  text-align: center;
-}
-
 .clear-cart {
   border-radius: 10px;
   border-color: whitesmoke;
@@ -600,9 +595,26 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: none;
   background-color: whitesmoke;
   margin-top: 5px;
+}
+
+.info-item {
+  padding: 30px;
+}
+
+.item-amount {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.cart-footer {
+  margin-top: 50px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

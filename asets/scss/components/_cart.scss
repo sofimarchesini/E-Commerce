@@ -52,11 +52,6 @@ visibility: visible;
     width: 30%;
 }
 
-.cart-footer{
-    margin-top: 50px;
- text-align: center;
-}
-
 .clear-cart{
     border-radius: 10px;
     border-color: whitesmoke;
@@ -66,8 +61,23 @@ visibility: visible;
 }
 
 .cart-item{
-    @include display-type(flex,row,wrap,space-between,center);
+    @include display-type(flex,row,wrap,none,center);
     background-color: whitesmoke;
     margin-top: 5px;
 
+}
+
+.info-item{
+    padding: 30px;
+}
+
+.item-amount{
+    @include display-type(flex,row,wrap,flex-end,flex-end);
+
+}
+
+
+.cart-footer{
+    margin-top: 50px;
+    text-align: center;
 }
