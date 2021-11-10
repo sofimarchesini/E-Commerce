@@ -146,9 +146,10 @@ function clearCart(){
     saveOnStorage();
 }
 
-cartbutton.addEventListener("click", showCart);
-closecart.addEventListener("click", hideCart);
-clearCartBtn.addEventListener("click",clearCart);
+$(cartbutton).on("click",showCart);
+$(closecart).on("click",hideCart);
+$(clearCartBtn).on("click",clearCart);
+
 
 
 //FUNCIONES AUXILIARES
