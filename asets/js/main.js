@@ -107,7 +107,7 @@ function generateCard(prod){
     div.classList.add("card");
 
     div.innerHTML =`<!--  card --> 
-                <div>
+                <div id="prod-${prod.id}">
                 <img class="woman-img" src=${prod.image} alt="Double-breasted jacket in a straight cut featuring a V neck"/>
                 <button class= "mt-4 button-add" id="${prod.id}"><p class="carrito-title">Añadir a Carrito</p></button><br/>
                 <p><strong class="name">${prod.name}</strong><br />Double-breasted jacket in a straight cut featuring a V neck<br/>
@@ -122,10 +122,14 @@ function generateCard(prod){
 
 function addButton(){
     for ( let prod of productos){
-        document.getElementById(`${prod.id}`).addEventListener("click",()=> {
+        $(`#${prod.id}`).on("click",()=> {
             addCart(prod);
             freshTotal(cart);
-            saveOnStorage();});
+            $(`#prod-${prod.id}`).slideUp("fast", ()=>{
+                $(`#prod-${prod.id}`).fadeIn("fast");
+            });
+            saveOnStorage();
+        });
     }
 }
 
@@ -151,7 +155,6 @@ $(closecart).on("click",hideCart);
 $(clearCartBtn).on("click",clearCart);
 
 
-
 //FUNCIONES AUXILIARES
 
 function setearProducto(name,price,datosProducto){
@@ -160,6 +163,7 @@ function setearProducto(name,price,datosProducto){
     datosProducto[id] = producto;
 }
 
+// ANIMACiONES
 
 
 function main(){
