@@ -1,4 +1,6 @@
 
+//CREO MIS VARIABLES
+
 const cartDOM = document.querySelector(".cart");
 const cartbutton = document.querySelector(".cart-button");
 const cartoverlay = document.querySelector(".cart-overlay") ;
@@ -7,6 +9,10 @@ const closecart = document.querySelector(".close-cart");
 const cartContent = document.querySelector(".cart-content");
 const cartTotal = document.querySelector(".cart-total");
 const products = document.querySelector(".grid-container-woman"); 
+const cartRemove = document.querySelector(".remove-item"); 
+const cartUp = document.querySelector(".cart-up"); 
+const cartDown = document.querySelector(".cart-down"); 
+
 
 // INICIALIZO EL CARRITO Y ME FIJO SI YA EXISTE EN LOCAL STORAGE 
 
@@ -28,7 +34,6 @@ function saveOnStorage() {
 
 
 //-----------------------------------
-
 
 // FUNCIONES DE CARRITO
 
@@ -64,27 +69,31 @@ function addAndShowCart(item) {
             <div class="info-item">
               <h4 class="name-item">${item.name}</h4>
               <h5 class="price-item">${item.price}</h5>
-              <span class="remove-item" id=${item.id}>
+              <span class="remove-item" id="${item.id}-remove">
                 <i class="far fa-trash-alt"></i>
               </span>
             </div>
             <!-- item functionality -->
             <div>
-                <i class="fas fa-chevron-up" id=${item.id}></i>
+                <i class="fas fa-chevron-up cart-up" id="${item.id}-up"></i>
               <p class="item-amount">1</p>
-                <i class="fas fa-chevron-down" id=${item.id}></i>
+                <i class="fas fa-chevron-down cart-down" id="${item.id}-down"></i>
             </div>
           <!-- cart item -->
     `;
-    saveOnStorage();
     cartContent.appendChild(div);
     if(cart.length==1) {showCart()};
+    $(`#${item.id}-up`).on("click",()=> {prodIncr(item)});
+    $(`#${item.id}-down`).on("click",()=>{prodDecr(item)});
+    $(`#${item.id}-remove`).on("click",()=>{removeProd(item)});
+    saveOnStorage();
+
 }
 
 function freshTotal(cart){
     let tempTotal=0;
     cart.map(item => {
-         tempTotal += parseInt(item.price);
+         tempTotal += parseInt(item.price*item.cantidad);
     });
     cartTotal.innerText = tempTotal;
 }
@@ -94,44 +103,16 @@ function clearTotal(){
 }
 
 
-
-
-// FUNCIONES PARA INICIALIZAR PRODUCTOS 
-
-function initializeProducts(){
-    productos.forEach(prod => generateCard(prod));
-}
-
-function generateCard(prod){
-    const div = document.createElement("div");
-    div.classList.add("card");
-
-    div.innerHTML =`<!--  card --> 
-                <div id="prod-${prod.id}">
-                <img class="woman-img" src=${prod.image} alt="Double-breasted jacket in a straight cut featuring a V neck"/>
-                <button class= "mt-4 button-add" id="${prod.id}"><p class="carrito-title">Añadir a Carrito</p></button><br/>
-                <p><strong class="name">${prod.name}</strong><br />Double-breasted jacket in a straight cut featuring a V neck<br/>
-                    <strong>$<span class="price">${prod.price}</span></strong></p>
-                </div>
-            <!-- card -->`
-
-    products.appendChild(div);
-}
-
 // BOTONES
 
-function addButton(){
-    for ( let prod of productos){
-        $(`#${prod.id}`).on("click",()=> {
-            addCart(prod);
-            freshTotal(cart);
-            $(`#prod-${prod.id}`).slideUp("fast", ()=>{
-                $(`#prod-${prod.id}`).fadeIn("fast");
-            });
-            saveOnStorage();
-        });
-    }
+function removeProd(prod){
+    const element = document.getElementById(`${prod.id}-cart`);
+    cartContent.removeChild(element);
+    cart = cart.filter(producto => producto.id !== prod.id);
+    saveOnStorage();
+    freshTotal(cart);
 }
+
 
 function showCart(){
     cartoverlay.classList.add("transparentBcg");
@@ -150,25 +131,78 @@ function clearCart(){
     saveOnStorage();
 }
 
+function prodIncr(prod){
+    const item = cart.find(producto => producto.id === prod.id);
+    item.cantidad++;
+    let amount = document.getElementById(`${item.id}-cart`).getElementsByClassName("item-amount")[0];
+    amount.innerHTML = item.cantidad;
+    saveOnStorage();
+    freshTotal(cart);
+
+}
+
+function prodDecr(prod){
+    const item = cart.find(producto => producto.id === prod.id);
+    if(item.cantidad==1){
+        removeProd(prod);
+    }else{
+        item.cantidad--;
+        let amount = document.getElementById(`${item.id}-cart`).getElementsByClassName("item-amount")[0];
+        amount.innerHTML = item.cantidad;
+        saveOnStorage();
+        freshTotal(cart);
+    }
+}
+
+
 $(cartbutton).on("click",showCart);
 $(closecart).on("click",hideCart);
 $(clearCartBtn).on("click",clearCart);
 
 
-//FUNCIONES AUXILIARES
 
-function setearProducto(name,price,datosProducto){
-    let id = Object.keys(datosProducto).length+1;
-    let producto = new Producto(name,price,id);
-    datosProducto[id] = producto;
+// FUNCIONES PARA INICIALIZAR PRODUCTOS 
+
+function generateCard(prod){
+    const div = document.createElement("div");
+    div.classList.add("cardd");
+
+    div.innerHTML =`<!--  card --> 
+                <div id="prod-${prod.id}">
+                <img class="woman-img" src=${prod.image} alt="Double-breasted jacket in a straight cut featuring a V neck"/>
+                <button class= "mt-4 button-add" id="${prod.id}"><p class="carrito-title">Añadir a Carrito</p></button><br/>
+                <p><strong class="name">${prod.name}</strong><br />Double-breasted jacket in a straight cut featuring a V neck<br/>
+                    <strong>$<span class="price">${prod.price}</span></strong></p>
+                </div>
+            <!-- card -->`
+
+    products.appendChild(div);
 }
 
-// ANIMACiONES
 
+for ( let prod of productos){
+    generateCard(prod);
+    $(`#${prod.id}`).on("click",()=> {
+        addCart(prod);
+        freshTotal(cart);
+        $(`#prod-${prod.id}`).slideUp("fast", ()=>{
+            $(`#prod-${prod.id}`).fadeIn("fast");
+        });
+        saveOnStorage();
+    });
 
-function main(){
-    initializeProducts();
-    addButton();
 }
 
-main();
+//AJAX API
+
+$.get( "http://api.openweathermap.org/data/2.5/weather?q=buenos+aires&APPID=7387efc3f2b32833225b06cb0e56c2b8", function( datos ) {
+    let clouds = datos.clouds.all
+    let clima = Math.round((datos.main.temp - 273)*10)/10;
+    if( clima>27) $("#tips").html("Hoy es el dia perfecto para comprar una malla");
+    if (clima<10) $("#tips").html("Hoy es el dia perfecto para comprar una sweter");
+    if(clouds == 1 && clima>22) $("#tips").html("Hoy es el dia perfecto para comprar unos High Heals");
+    if(clima>10 && clima<27)  $("#tips").html("Hoy es el dia perfecto para comprar algo suelto");
+});
+
+
+

@@ -232,7 +232,7 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  height: 12vh;
+  height: 15vh;
   background-color: #1b1b1b;
   position: fixed;
   width: 100%;
@@ -266,7 +266,7 @@ header .cart-items {
   position: absolute;
   border-radius: 40%;
   padding: 0 5px;
-  top: 10px;
+  top: 30px;
   right: 22px;
   background: #dbcfcf;
   color: #533d3d;
@@ -379,6 +379,19 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
   display: block;
 }
 
+#tips {
+  background-color: white;
+  height: 25px;
+  width: 100%;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+@media only screen and (max-width: 659px) {
+  #tips {
+    display: none;
+  }
+}
+
 /* HOME SECTION */
 .home-section {
   width: 100%;
@@ -439,6 +452,7 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
 }
 .woman-section .link-view-all {
   border-bottom: 2px black solid;
+  border: none;
 }
 .woman-section .link-view-all:hover {
   color: grey;
@@ -615,6 +629,15 @@ header nav .nav-stores ul li, header nav .nav-woman ul li {
 .cart-footer {
   margin-top: 50px;
   text-align: center;
+}
+
+.card {
+  position: relative;
+  border: none;
+}
+
+.cart-up, .cart-down, .remove-item {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

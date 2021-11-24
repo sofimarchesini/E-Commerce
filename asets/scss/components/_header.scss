@@ -3,7 +3,7 @@
 
 header {
     @include display-type(flex,row,wrap,space-between,center);
-    height: 12vh;
+    height: 15vh;
     background-color:map-get($colores, color-base);
     position: fixed;
     width: 100%;
@@ -31,7 +31,7 @@ header {
         position: absolute;
         border-radius: 40%;
         padding: 0 5px;
-        top: 10px;
+        top: 30px;
         right: 22px;
         background: rgb(219, 207, 207);
         color: rgb(83, 61, 61);
@@ -134,3 +134,15 @@ header {
 }
 
 
+#tips{
+    background-color: white;
+    height: 25px;
+    width: 100%;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+
+    @media only screen and (max-width: 659px){
+        display: none;
+      }
+}

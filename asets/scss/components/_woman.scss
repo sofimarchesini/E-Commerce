@@ -13,6 +13,7 @@
     .link-view-all{
       @extend %link-woman;
       border-bottom: 2px black solid;
+      border: none;
 
       &:hover{
         color: grey;

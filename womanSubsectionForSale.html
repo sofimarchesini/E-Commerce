@@ -18,33 +18,46 @@
   <body>
     <header>
       <!-- HEADER QUE INCLUYE EL LOGO (CREADO CON UN TITULO Y MODIFICANDOLO MANUALMENTE CON CSS),Y  LA BARRA NAVEGADORA -->
-      <a class= "header-title-link" href="#"><h1 class=>FENDI</h1></a>
-      <nav class="nav-header">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li>
-            <a href="index.html#woman-initial">Woman</a>
-            <div class="nav-woman">
-              <ul>
-                <li><a href="index.html#woman-initial">Basics</a></li>
-                <li><a href="#">For Sale</a></li>
-                <li><a href="womanSubsectionAll.html">View All</a></li>
-              </ul>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-5"></div>
+          <div class="col-2"><a class="header-title-link" href="#"><h1>FENDI</h1></a></div>
+          <div  class="col-5">
+            <div class="cart-button">
+              <i class="icon-header fas fa-shopping-bag"></i>
             </div>
-          </li>
-          <li><a href="index.html#about-us">About us</a></li>
-      		<li><a href="index.html#stores">Stores</a>
-            <div class="nav-stores">
-              <ul>
-                <li><a href="index.html#first-store">Dubai</a></li>
-                <li><a href="index.html#second-store">V.Mall</a></li>
-                <li><a href="index.html#third-store">Tryano</a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="index.html#contact">Contact us</a></li>
-        </ul>
-      </nav>
+            <div class="cart-items">0</div>
+          </div>
+        </div>
+        <div class="row">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a href="index.html#woman-initial">Woman</a>
+                <div class="nav-woman">
+                  <ul>
+                    <li><a href="index.html#woman-initial">Basics</a></li>
+                    <li><a href="#">For Sale</a></li>
+                    <li><a href="womanSubsectionAll.html">View All</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="index.html#about-section">About us</a></li>
+              <li><a href="index.html#stores-section">Stores</a>
+                <div class="nav-stores">
+                  <ul>
+                    <li><a href="index.html#first-store">Dubai</a></li>
+                    <li><a href="index.html#second-store">V.Mall</a></li>
+                    <li><a href="index.html#third-store">Tryano</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="index.html#contact-section">Contact us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </header>
 
     <!-- SECCION QUE INCLUYE 3 FOTOS POSICIONADAS CON GRID SYSTEM Y UN ACARROUSEL-->

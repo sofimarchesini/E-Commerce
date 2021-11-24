@@ -1,6 +1,5 @@
 
-
-    const items = [
+     const items = [
         {
             name:"JACKET1",
             price: 12500,
@@ -61,5 +60,3 @@ const productos = [];
 for (const item of items) {
     productos.push(new Producto(item.id,item.name,item.price,item.image,item.description))
 };
-
-

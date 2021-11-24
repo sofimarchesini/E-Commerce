@@ -81,3 +81,12 @@ visibility: visible;
     margin-top: 50px;
     text-align: center;
 }
+
+.card{
+    position: relative;
+    border: none;
+}
+
+.cart-up,.cart-down,.remove-item{
+    cursor: pointer;
+}
