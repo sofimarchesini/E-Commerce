@@ -170,7 +170,7 @@ function generateCard(prod){
     div.innerHTML =`<!--  card --> 
                 <div id="prod-${prod.id}">
                 <img class="woman-img" src=${prod.image} alt="Double-breasted jacket in a straight cut featuring a V neck"/>
-                <button class= "mt-4 button-add" id="${prod.id}"><p class="carrito-title">Añadir a Carrito</p></button><br/>
+                <button class= "mt-4 button-add" id="${prod.id}"><p class="carrito-title">Add to cart</p></button><br/>
                 <p><strong class="name">${prod.name}</strong><br />Double-breasted jacket in a straight cut featuring a V neck<br/>
                     <strong>$<span class="price">${prod.price}</span></strong></p>
                 </div>
